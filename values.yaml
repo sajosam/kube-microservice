@@ -1,0 +1,6 @@
+agent:
+  remoteWrite:
+    - url: https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push
+      basicAuth:
+        username: 1414101
+        password: glc_eyJvIjoiODIyMDkyIiwibiI6InN0YWNrLTg1MTUwNC1obS13cml0ZS1ncmFmYW5hc3RhY2siLCJrIjoiNjgybFplTTdld1o3NjhWRVUxZ283NmZaIiwibSI6eyJyIjoicHJvZC11cy1lYXN0LTAifX0=

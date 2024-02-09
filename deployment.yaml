@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student
+  template:
+    metadata:
+      labels:
+        app: student
+    spec:
+      containers:
+      - name: student
+        image: registry.digitalocean.com/acr-sajo-test-eastus-001/student-image:latest
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teacher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: teacher
+  template:
+    metadata:
+      labels:
+        app: teacher
+    spec:
+      containers:
+      - name: teacher
+        image: registry.digitalocean.com/acr-sajo-test-eastus-001/teacher-image:latest
+        ports:
+        - containerPort: 8081
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin
+  template:
+    metadata:
+      labels:
+        app: admin
+    spec:
+      containers:
+      - name: admin
+        image: registry.digitalocean.com/acr-sajo-test-eastus-001/admin-image:latest
+        ports:
+        - containerPort: 8082
+
